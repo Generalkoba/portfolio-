@@ -1,0 +1,606 @@
+/* ==============================
+   GLOBAL RESET & BASE STYLES
+   ============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #000000;      /* Black */
+  --color-secondary: #cc0000;    /* Red */
+  --color-white: #ffffff;
+  --color-light-gray: #f5f5f5;
+  --color-dark-gray: #1a1a1a;
+  --font-main: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-bottom: 2px solid var(--color-secondary);
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+/* Logo / Name */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--color-secondary);
+}
+
+/* Logo image sizing — adjust height to fit your logo */
+.logo-img {
+  height: 48px;      /* change this value to resize your logo */
+  width: auto;       /* keeps the aspect ratio intact */
+  display: block;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+
+nav ul li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--color-secondary);
+  border-bottom-color: var(--color-secondary);
+}
+
+/* ==============================
+   HERO SECTION
+   ============================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 60px;
+  background-color: var(--color-primary);
+
+  /* ── BACKGROUND IMAGE ──────────────────────────────────────
+     Replace 'your-image.jpg' with your actual image file path.
+     Example: background-image: url('images/hero-bg.jpg');
+  ─────────────────────────────────────────────────────────── */
+  background-image: url('your-image.jpg');
+  background-size: cover;        /* fills the whole section */
+  background-position: center;   /* keeps the image centered */
+  background-repeat: no-repeat;  /* no tiling */
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+/* Greeting line */
+.hero-greeting {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 16px;
+}
+
+/* Main heading */
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+/* Red highlight on a word */
+.hero h1 span {
+  color: var(--color-secondary);
+}
+
+/* Sub title */
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #aaaaaa;
+  margin-bottom: 36px;
+  letter-spacing: 1px;
+}
+
+/* Divider line under subtitle */
+.hero-divider {
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-secondary);
+  margin: 0 auto 36px;
+}
+
+/* Hero description paragraph */
+.hero-description {
+  font-size: 1rem;
+  color: #bbbbbb;
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+/* Call to action button */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 38px;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid var(--color-secondary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-secondary);
+}
+
+/* Optional: outline/secondary button style */
+.btn-outline {
+  display: inline-block;
+  padding: 14px 38px;
+  background-color: transparent;
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid var(--color-white);
+  margin-left: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* ==============================
+   ABOUT PAGE
+   ============================== */
+
+.about {
+  min-height: 100vh;
+  padding: 120px 60px 80px;
+  background-color: var(--color-primary);
+}
+
+/* Section heading block (reusable across pages) */
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+}
+
+.section-heading h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 1px;
+}
+
+.section-heading h1 span {
+  color: var(--color-secondary);
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-secondary);
+  margin: 16px auto 0;
+}
+
+/* Two-column layout */
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* LEFT column — photo */
+.about-image {
+  flex: 1;
+  max-width: 340px;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid var(--color-secondary);  /* red border frame */
+  object-fit: cover;
+}
+
+/* RIGHT column — text */
+.about-text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Each content block (Who I Am, Education) */
+.about-block h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-dark-gray);
+}
+
+.about-block p {
+  font-size: 1rem;
+  color: #bbbbbb;
+  line-height: 1.8;
+}
+
+/* Education item row */
+.education-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.edu-year {
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  padding-top: 3px;
+  min-width: 110px;
+}
+
+.edu-details h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.edu-details p {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
+
+/* ==============================
+   SKILLS PAGE
+   ============================== */
+
+.skills {
+  min-height: 100vh;
+  padding: 120px 60px 80px;
+  background-color: var(--color-primary);
+}
+
+/* Grid of skill cards */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* Individual skill card */
+.skill-card {
+  background-color: var(--color-dark-gray);
+  border: 1px solid #2a2a2a;
+  border-top: 3px solid var(--color-secondary);
+  padding: 32px 28px;
+  width: 260px;
+  text-align: center;
+}
+
+/* Skill abbreviation block */
+.skill-icon {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.skill-desc {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Level label shared base */
+.skill-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border: 1px solid;
+}
+
+.skill-beginner {
+  color: #aaaaaa;
+  border-color: #aaaaaa;
+}
+
+.skill-intermediate {
+  color: #ffaa00;
+  border-color: #ffaa00;
+}
+
+.skill-advanced {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* ==============================
+   PORTFOLIO PAGE
+   ============================== */
+
+.portfolio {
+  min-height: 100vh;
+  padding: 120px 60px 80px;
+  background-color: var(--color-primary);
+}
+
+/* Grid of project cards */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* Individual project card */
+.project-card {
+  background-color: var(--color-dark-gray);
+  border: 1px solid #2a2a2a;
+  border-left: 4px solid var(--color-secondary);
+  padding: 32px 28px;
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Category tag above the title */
+.project-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.4;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* View Project button — reuses .btn-primary, just adjust margin */
+.project-card .btn-primary {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 10px 24px;
+}
+
+/* ==============================
+   CONTACT PAGE
+   ============================== */
+
+.contact {
+  min-height: 100vh;
+  padding: 120px 60px 80px;
+  background-color: var(--color-primary);
+}
+
+/* Narrow wrapper to keep the form readable */
+.contact-wrapper {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Each field group: label + input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  background-color: var(--color-dark-gray);
+  border: 1px solid #2a2a2a;
+  border-bottom: 2px solid var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #666666;
+}
+
+.form-group input:focus {
+  border-color: var(--color-secondary);
+  background-color: #111111;
+}
+
+/* Submit button — extends .btn-primary */
+.btn-submit {
+  width: 100%;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border: 2px solid var(--color-secondary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: transparent;
+  color: var(--color-secondary);
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+.footer {
+  background-color: var(--color-dark-gray);
+  border-top: 2px solid var(--color-secondary);
+  padding: 32px 60px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Footer name */
+.footer-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+/* Copyright line */
+.footer-copy {
+  font-size: 0.8rem;
+  color: #666666;
+  letter-spacing: 1px;
+}
+
+/* Footer nav links */
+.footer-nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.footer-nav a {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: var(--color-secondary);
+}
